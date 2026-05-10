@@ -1,0 +1,470 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    overflow:hidden;
+    height:100vh;
+
+    background:
+    radial-gradient(circle at top,
+    #1a1f3d,
+    #10162b,
+    #050816);
+}
+
+/* ESTRELLAS */
+
+.stars{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+}
+
+.star{
+    position:absolute;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:starFall linear infinite;
+}
+
+/* PALABRAS */
+
+.words{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:50;
+}
+
+.word{
+    position:absolute;
+
+    color:white;
+
+    font-weight:700;
+
+    opacity:.8;
+
+    animation:wordFall linear infinite;
+
+    text-shadow:
+    0 0 10px rgba(255,255,255,.5);
+}
+
+/* MENSAJE */
+
+.message{
+    position:absolute;
+
+    top:20px;
+    width:100%;
+
+    text-align:center;
+
+    z-index:100;
+}
+
+.message h1{
+    font-size:80px;
+    color:white;
+
+    font-weight:900;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,.8),
+    0 0 45px rgba(255,255,255,.4);
+}
+
+.message p{
+    margin-top:12px;
+
+    font-size:30px;
+    color:white;
+
+    font-weight:600;
+}
+
+/* CONTADOR */
+
+.counter{
+    margin-top:30px;
+
+    display:flex;
+    justify-content:center;
+    gap:20px;
+}
+
+.time-box{
+    width:140px;
+    height:140px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.08);
+
+    border:2px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.08);
+}
+
+.time-box span{
+    font-size:52px;
+    color:white;
+    font-weight:900;
+}
+
+.time-box small{
+    margin-top:8px;
+    color:white;
+    font-size:20px;
+}
+
+/* FOTOS */
+
+.photos{
+    position:absolute;
+    inset:0;
+    z-index:20;
+}
+
+.photo{
+    position:absolute;
+
+    width:180px;
+    height:230px;
+
+    object-fit:cover;
+
+    border:10px solid white;
+    border-bottom:35px solid white;
+
+    border-radius:10px;
+
+    box-shadow:
+    0 0 30px rgba(0,0,0,.5);
+
+    animation:floatPhoto 6s ease-in-out infinite;
+}
+
+.p1{
+    left:3%;
+    top:250px;
+}
+
+.p2{
+    right:3%;
+    top:250px;
+}
+
+.p3{
+    left:18%;
+    bottom:90px;
+}
+
+.p4{
+    right:18%;
+    bottom:90px;
+}
+
+/* JARDÍN */
+
+.garden{
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+    height:420px;
+}
+
+/* FLORES */
+
+.flower{
+    position:absolute;
+    bottom:0;
+
+    width:12px;
+
+    background:#86efac;
+
+    border-radius:20px;
+
+    transform-origin:bottom;
+
+    animation:sway 4s ease-in-out infinite;
+}
+
+/* CABEZA */
+
+.flower::before{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-55px;
+
+    transform:translateX(-50%);
+
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    background:
+    repeating-conic-gradient(
+    currentColor 0deg 25deg,
+    transparent 25deg 45deg
+    );
+}
+
+/* CENTRO */
+
+.flower::after{
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-32px;
+
+    transform:translateX(-50%);
+
+    width:34px;
+    height:34px;
+
+    background:#5d4037;
+
+    border-radius:50%;
+}
+
+/* COLORES */
+
+.yellow{
+    color:#ffe44d;
+}
+
+.pink{
+    color:#ff80ab;
+}
+
+.blue{
+    color:#4fc3f7;
+}
+
+.orange{
+    color:#ffb74d;
+}
+
+.green{
+    color:#aed581;
+}
+
+/* TAMAÑOS */
+
+.small::before{
+    width:65px;
+    height:65px;
+}
+
+.medium::before{
+    width:85px;
+    height:85px;
+}
+
+.big::before{
+    width:105px;
+    height:105px;
+}
+
+/* MENSAJE FINAL */
+
+.final-message{
+    position:absolute;
+
+    bottom:12px;
+    width:100%;
+
+    text-align:center;
+
+    font-size:38px;
+    color:white;
+
+    font-weight:800;
+
+    z-index:100;
+
+    text-shadow:
+    0 0 15px rgba(255,255,255,.5);
+}
+
+/* ANIMACIONES */
+
+@keyframes sway{
+
+    0%{
+        transform:rotate(-2deg);
+    }
+
+    50%{
+        transform:rotate(2deg);
+    }
+
+    100%{
+        transform:rotate(-2deg);
+    }
+}
+
+@keyframes floatPhoto{
+
+    0%{
+        transform:
+        translateY(0px)
+        rotate(-4deg);
+    }
+
+    50%{
+        transform:
+        translateY(-10px)
+        rotate(3deg);
+    }
+
+    100%{
+        transform:
+        translateY(0px)
+        rotate(-4deg);
+    }
+}
+
+@keyframes starFall{
+
+    from{
+        transform:
+        translateY(-100px)
+        translateX(0px);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    to{
+        transform:
+        translateY(120vh)
+        translateX(-150px);
+
+        opacity:0;
+    }
+}
+
+@keyframes wordFall{
+
+    from{
+        transform:
+        translateY(-100px)
+        rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.9;
+    }
+
+    to{
+        transform:
+        translateY(120vh)
+        rotate(10deg);
+
+        opacity:0;
+    }
+}
+/* MINI FLORES */
+
+.mini-flower{
+    position:absolute;
+    bottom:0;
+
+    width:6px;
+
+    background:#86efac;
+
+    border-radius:20px;
+
+    animation:sway 3s ease-in-out infinite;
+}
+
+/* CABEZA */
+
+.mini-flower::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-28px;
+
+    transform:translateX(-50%);
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:
+    repeating-conic-gradient(
+    currentColor 0deg 25deg,
+    transparent 25deg 45deg
+    );
+}
+
+/* CENTRO */
+
+.mini-flower::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+    top:-14px;
+
+    transform:translateX(-50%);
+
+    width:14px;
+    height:14px;
+
+    background:#5d4037;
+
+    border-radius:50%;
+}
+/* MÁS MOVIMIENTO */
+
+.flower:nth-child(even){
+
+    animation-duration:5s;
+}
+
+.flower:nth-child(odd){
+
+    animation-duration:3.5s;
+}
